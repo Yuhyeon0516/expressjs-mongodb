@@ -3,6 +3,7 @@ const path = require("path");
 const usersRouter = require("./routes/users.router");
 const postsRouter = require("./routes/posts.router");
 const { default: mongoose } = require("mongoose");
+const productsRouter = require("./routes/products.router");
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.get("/", (req, res) => {
 
 app.use("/users", usersRouter);
 app.use("/posts", postsRouter);
+app.use("/products", productsRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}...`);
